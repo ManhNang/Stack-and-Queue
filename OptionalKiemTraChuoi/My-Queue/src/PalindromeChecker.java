@@ -16,12 +16,12 @@ public class PalindromeChecker {
         for (int i = 0; i < cleanedString.length(); i++) {
             char c = cleanedString.charAt(i);
             stack.push(c);
-            queue.add(c);
+            queue.offer(c);
         }
 
         boolean isPalindrome = true;
         while (!stack.isEmpty()) {
-            if (!stack.pop().equals(queue.remove())) {
+            if (!stack.pop().equals(queue.poll())) {
                 isPalindrome = false;
                 break;
             }
